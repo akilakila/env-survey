@@ -12,6 +12,6 @@ Now, you're all set up for checking what the python algorithm has to offer
 Although, it might be better to create a test dictionary, then practice
 Reloading and doing the survey is gonna be super tedious
 
-#Instructions for frontend team
+# Instructions for frontend team
 
 I need some design help 🥺
