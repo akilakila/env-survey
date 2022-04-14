@@ -1,0 +1,17 @@
+.Question {
+    display: inline-block;
+    inline-size: 125px;
+    text-align: center;
+}
+
+.Question label {
+    font: 15px Arial, sans-serif;
+}
+
+#submit {
+    font: 15px "Fira Sans", serif;
+}
+
+.results {
+    color: white;
+}
