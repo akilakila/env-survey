@@ -28,7 +28,24 @@ class Server(BaseHTTPRequestHandler):
     def do_POST(self):
         input = self.get_body()
         dict = json.loads(input)
-        print(dict)
+
+        #converts the strings from the dict into ints
+        sum = 0
+        for key in dict:
+            num = int(dict[key])
+            sum += num
+        sum = sum//5
+        print(sum)
+        if sum < 2:
+            print("category 1")
+        elif sum == 3:
+            print("category 2")
+        elif sum == 4:
+            print("category 3")
+        elif sum == 5:
+            print("category 4")
+        else:
+            print("error")
 
 # These two lines we'll need to create/use the server
 httpd = HTTPServer(('localhost', 8080), Server)
