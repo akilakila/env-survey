@@ -1,3 +1,43 @@
+/*nav-bar*/
+.header-nav{
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-bottom: 4px solid #fdb347;
+}
+
+h1, p{
+    text-align:center;
+    margin: 1em auto;
+}
+
+h1{
+    font-size: 40px;
+}
+
+p{
+    font-size: 20px;
+    margin: 0 0.5em 0 0;
+}
+
+/*trying to get picture in background still*/
+body{
+    width: 100;
+    height: 100vh;
+    margin: 0;
+    background-color: #98BF64;   /*olive color*/
+}
+
+form{
+    width: 60vw;
+    text-align: center;
+    max-width: 700px;
+    min-width: 300px;
+    font-family: Helvetica, Georgia;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    color: rgb(0,0,0);
+}
+
 .Question {
     display: inline-block;
     inline-size: 125px;
