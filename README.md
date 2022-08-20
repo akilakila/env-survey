@@ -15,3 +15,9 @@ Reloading and doing the survey is gonna be super tedious
 # Instructions for frontend team
 
 I need some design help 🥺
+
+# Addons for most recent commit:
+
+Arranged files in folder to follow Flask's framework
+Changed part of index.html to follow Flask syntax
+Changed algo.py to reflect Flask documentation

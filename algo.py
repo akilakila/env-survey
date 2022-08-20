@@ -2,51 +2,47 @@ from http.server import *
 import os
 import sys
 import subprocess
+from flask import Flask, render_template, url_for, request
 import json
 
-class Server(BaseHTTPRequestHandler):
-    # Helper function for retrieving input
-    def get_body(self):
-        content_len_header = self.headers.get("Content-Length")
-        content_len = 0
-        if content_len_header is not None:
-            content_len = int(content_len_header)
-        return self.rfile.read(content_len)
+app = Flask(__name__)
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    # Method for pre-processing of the server
-    def do_GET(self):
-        if self.path == '/':
-            self.path = '/index.html'
-        openFile = open(self.path[1:]).read()
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(bytes(openFile, 'utf-8'))
+if __name__ == "__main__":
+    app.run(debug=True)
 
-    # What happens once we do the fetch method
-    # For now, the values are stored in dict
-    # You guys can handle the algo stuff :)
-    def do_POST(self):
-        input = self.get_body()
-        dict = json.loads(input)
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    calc_cat = False
+    if request.method == 'POST':
+        form = request.form
+        calc_cat = calc_cat(form)
+    return render_template('index.html', calc_cat=calc_cat)
 
-        #converts the strings from the dict into ints
-        sum = 0
-        for key in dict:
-            num = int(dict[key])
-            sum += num
-        sum = sum//5
-        print(sum)
-        if sum < 2:
-            print("category 1")
-        elif sum == 3:
-            print("category 2")
-        elif sum == 4:
-            print("category 3")
-        elif sum == 5:
-            print("category 4")
-        else:
-            print("error")
+def calc_cat(self):
+    input = self.get_body()
+    dict = json.loads(input)
 
-# These two lines we'll need to create/use the server
-httpd = HTTPServer(('localhost', 8080), Server)
-httpd.serve_forever()
+    #converts the strings from the dict into ints
+    sum = 0
+    for key in dict:
+        num = int(dict[key])
+        sum += num
+
+    sum = sum//5
+    category = "None"
+    if sum < 2:
+        category = "category 1"
+        return category
+    elif sum == 3:
+        category = "category 2"
+    elif sum == 4:
+        category = "category 3"
+    elif sum == 5:
+        category = "category 4"
+    else:
+        print("error")
+    
+    return category
