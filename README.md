@@ -7,7 +7,7 @@ It then allows for the option for users to redirect themselves to a page that pr
 
 First, open your terminal to where the files are
 Then, with your terminal, type in python3 algo.py to run the python file
-Now, on your browser, go to:  http://localhost:8080/
+Now, on your browser, go to:  http://127.0.0.1:5000/
 Now, you're all set up for checking what the python algorithm has to offer
 Although, it might be better to create a test dictionary, then practice
 Reloading and doing the survey is gonna be super tedious
