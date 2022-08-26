@@ -33,7 +33,9 @@ body {
 }
 
 .results {
-    color: white;
+    color: lightcyan;
+    text-align: center;
+    font-size: xx-large;
 }
 
 #questions {
@@ -61,6 +63,29 @@ form {
     margin: 50px;
 }
 
-#submit:hover{
-    background-color: lightblue;
+.finish-survey {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: #08363b;
+    background-color: #E5E189;
+    backface-visibility: hidden;
+    border: 0.175rem solid transparent;
+    border-radius: 3rem;
+}
+
+#submit {
+    margin-bottom: 50px;
+    border-color: #08363b;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
+#submit:hover {
+    transform: perspective(1px) scale3d(1.07, 1.07, 1) translateZ(0) !important;
 }
